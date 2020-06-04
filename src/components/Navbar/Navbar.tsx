@@ -10,15 +10,17 @@ type Props = {
 
 const Navbar = ({ handleMenuActiveChange }: Props) => (
   <nav className="navbar navbar-default navbar-fixed-top navbar-expand-lg">
-    <a href="#" className="navbar-brand">
-      <ReactLogo />
-    </a>
-    <button
-      className="navbar-toggler collapsed"
-      onClick={() => handleMenuActiveChange(true)}
-    >
-      <ReactMenu />
-    </button>
+    <div className="container">
+      <a href="#" className="navbar-brand">
+        <ReactLogo />
+      </a>
+      <button
+        className="navbar-toggler collapsed"
+        onClick={() => handleMenuActiveChange(true)}
+      >
+        <ReactMenu />
+      </button>
+    </div>
   </nav>
 );
 

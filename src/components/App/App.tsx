@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.scss";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
+import Jumbotron from "../Jumbotron";
 
 const App = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -17,6 +18,7 @@ const App = () => {
         handleMenuActiveChange={handleMenuActiveChange}
         menuActive={menuActive}
       />
+      <Jumbotron />
     </div>
   );
 };
