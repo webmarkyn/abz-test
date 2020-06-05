@@ -9,7 +9,7 @@ const Users = () => (
       <h1>Our cheerful users</h1>
       <p>Attention! Sorting users by registration date</p>
       <div className="row users-list">
-        <div className="col-12 users-list-item">
+        <div className="col-12 col-md-4 users-list-item">
           <div className="user-avatar">
             <img src={avatar} alt="user-avatar" />
           </div>
@@ -22,7 +22,7 @@ const Users = () => (
             <p className="user-phone">+380 50 678 03 24</p>
           </div>
         </div>
-        <div className="col-12 users-list-item">
+        <div className="col-12 col-md-4 users-list-item">
           <div className="user-avatar">
             <img src={avatar} alt="user-avatar" />
           </div>
@@ -35,7 +35,7 @@ const Users = () => (
             <p className="user-phone">+380 50 678 03 24</p>
           </div>
         </div>
-        <div className="col-12 users-list-item">
+        <div className="col-12 col-md-4 users-list-item">
           <div className="user-avatar">
             <img src={avatar} alt="user-avatar" />
           </div>

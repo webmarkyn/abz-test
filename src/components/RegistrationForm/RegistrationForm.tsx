@@ -10,7 +10,7 @@ const RegistrationForm = () => {
     <section className="registration-form">
       <div className="container text-center">
         <div className="row">
-          <div className="col-12">
+          <div className="col-12 col-md-8 offset-md-2">
             <h1>Register to get a work</h1>
             <p>
               Attention! After successful registration and alert, update the

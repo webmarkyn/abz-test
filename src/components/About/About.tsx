@@ -13,7 +13,9 @@ const About = () => (
           <AboutImage />
         </div>
         <div className="col-12 col-md-8 about-text">
-          <h2 className="text-center">I am cool frontend developer</h2>
+          <h2 className="text-center text-md-left">
+            I am cool frontend developer
+          </h2>
           <p>
             We will evaluate how clean your approach to writing CSS and
             Javascript code is. You can use any CSS and Javascript 3rd party
@@ -25,9 +27,11 @@ const About = () => (
             (gulp/webpack) you will get bonus points as well. Slice service
             directory page P​SD mockup​ into HTML5/CSS3.
           </p>
-          <a href="#" className="about-text-cta d-block text-center">
-            Sign up now
-          </a>
+          <div className="about-form-link text-center text-md-left">
+            <a href="#" className="about-text-cta d-block">
+              Sign up now
+            </a>
+          </div>
         </div>
       </div>
     </div>

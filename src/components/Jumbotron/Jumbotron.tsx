@@ -10,8 +10,8 @@ const Jumbotron = () => {
     <div className="jumbotron jumbotron-banner">
       <div className="container">
         <div className="row">
-          <div className="col-12 col-md-8 text-md-left">
-            <h1 className="p-md-0 pr-md-5 mt-md-2">
+          <div className="col-12 col-md-8 col-lg-8 text-md-left">
+            <h1 className="mt-md-2">
               Test assignment for Frontend Developer position
             </h1>
             <p>
