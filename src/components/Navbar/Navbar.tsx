@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Navbar = ({ handleMenuActiveChange }: Props) => (
-  <nav className="navbar navbar-default navbar-fixed-top navbar-expand-lg">
+  <nav className="navbar navbar-default fixed-top navbar-expand-lg">
     <div className="container">
       <a href="#" className="navbar-brand">
         <ReactLogo />

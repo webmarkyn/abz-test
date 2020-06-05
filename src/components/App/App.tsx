@@ -3,6 +3,7 @@ import "./App.scss";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import Jumbotron from "../Jumbotron";
+import About from "../About";
 
 const App = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
         menuActive={menuActive}
       />
       <Jumbotron />
+      <About />
     </div>
   );
 };

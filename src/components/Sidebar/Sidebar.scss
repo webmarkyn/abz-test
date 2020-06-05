@@ -1,5 +1,5 @@
 .sidebar-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -8,6 +8,7 @@
   visibility: hidden;
   opacity: 0;
   transition: .2s ease-in-out;
+  z-index: 20;
 
   &.active {
     visibility: visible;
@@ -19,7 +20,7 @@
   background: #fff;
   padding-top: 7px;
   padding-left: 0;
-  padding-right: 13px;
+  padding-right: 0;
   width: 81.2%;
 
   &-menu-section {

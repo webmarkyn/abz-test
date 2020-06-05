@@ -22,9 +22,7 @@ const Sidebar = ({ menuActive, handleMenuActiveChange }: Props) => {
 
   return (
     <div
-      className={`sidebar-wrapper d-lg-none position-absolute ${
-        menuActive ? "active" : ""
-      }`}
+      className={`sidebar-wrapper d-lg-none ${menuActive ? "active" : ""}`}
       ref={wrapperEl}
       onClick={handleWrapperClick}
     >
