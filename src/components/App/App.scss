@@ -12,6 +12,11 @@
     color: #fff;
     background: #d24335;
   }
+
+  &:disabled {
+    background: #d7d7d7;
+    color: #939292;
+  }
 }
 
 h1 {

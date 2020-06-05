@@ -9,10 +9,10 @@ const About = () => (
     <div className="container">
       <div className="row text-center">
         <h1>Let's get acquainted</h1>
-        <div className="col-12 col-md-4 about-image">
+        <div className="col-12 col-md-4 col-lg-5 about-image">
           <AboutImage />
         </div>
-        <div className="col-12 col-md-8 about-text">
+        <div className="col-12 col-md-8 col-lg-7 about-text">
           <h2 className="text-center text-md-left">
             I am cool frontend developer
           </h2>

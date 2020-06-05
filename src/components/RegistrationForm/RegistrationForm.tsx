@@ -7,11 +7,11 @@ const RegistrationForm = () => {
     e.preventDefault();
   };
   return (
-    <section className="registration-form">
+    <section className="registration-form" id="registrationForm">
       <div className="container text-center">
         <div className="row">
-          <div className="col-12 col-md-8 offset-md-2">
-            <h1>Register to get a work</h1>
+          <h1>Register to get a work</h1>
+          <div className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
             <p>
               Attention! After successful registration and alert, update the
               list of users in the block from the top
@@ -25,6 +25,9 @@ const RegistrationForm = () => {
                   id="nameInput"
                   placeholder="Your name"
                 />
+                <div className="invalid-feedback">
+                  Please choose a username.
+                </div>
               </div>
               <div className="form-group">
                 <label htmlFor="emailInput">Email</label>
@@ -51,7 +54,7 @@ const RegistrationForm = () => {
                   <input
                     type="radio"
                     id="customRadio1"
-                    name="customRadio"
+                    name="Frontend developer"
                     className="custom-control-input"
                   />
                   <label
@@ -65,7 +68,7 @@ const RegistrationForm = () => {
                   <input
                     type="radio"
                     id="customRadio2"
-                    name="customRadio"
+                    name="Backend developer"
                     className="custom-control-input"
                   />
                   <label
@@ -79,7 +82,7 @@ const RegistrationForm = () => {
                   <input
                     type="radio"
                     id="customRadio3"
-                    name="customRadio"
+                    name="Designer"
                     className="custom-control-input"
                   />
                   <label
@@ -93,7 +96,7 @@ const RegistrationForm = () => {
                   <input
                     type="radio"
                     id="customRadio4"
-                    name="customRadio"
+                    name="QA"
                     className="custom-control-input"
                   />
                   <label
@@ -118,7 +121,11 @@ const RegistrationForm = () => {
                 </div>
               </div>
               <div className="form-submit text-center">
-                <button type="submit" className="btn btn-cta text-center">
+                <button
+                  type="submit"
+                  className="btn btn-cta text-center"
+                  disabled
+                >
                   Sign up now
                 </button>
               </div>

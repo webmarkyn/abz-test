@@ -10,10 +10,14 @@
     padding-top: 114px;
   }
 
+  @include media-breakpoint-up(lg) {
+    padding-top: 152px;
+  }
+
   h1 {
     margin-bottom: 10px;
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-up(md) {
       margin-bottom: 16px;
     }
   }
@@ -21,21 +25,30 @@
   &-list {
     margin-top: 37px;
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-up(md) {
       margin-top: 75px;
     }
 
     &-item {
       text-align: center;
       margin-bottom: 35px;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 50px;
+      }
     }
   }
 
   button.btn-cta {
     padding: 6px 62px;
 
-    @include media-breakpoint-only(md) {
+    @include media-breakpoint-up(md) {
       margin-bottom: 45px;
+      margin-top: -13px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 85px;
     }
   }
 }
@@ -52,6 +65,10 @@
   @include media-breakpoint-only(md) {
     padding: 0;
   }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 40px;
+  }
 }
 
 .user-info {
@@ -60,6 +77,11 @@
   @include media-breakpoint-only(md) {
     padding: 0;
   }
+
+  @include media-breakpoint-up(lg) {
+    padding: 0 40px;
+  }
+
   &>p {
     margin-bottom: 0;
   }

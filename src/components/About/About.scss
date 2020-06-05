@@ -10,6 +10,11 @@
     margin-bottom: 42px;
   }
 
+  @include  media-breakpoint-up(lg) {
+    margin-top: 151px;
+    margin-bottom: 82px;
+  }
+
   h1 {
     margin-bottom: -25px;
   }
@@ -24,6 +29,11 @@
       margin-top: 17px;
       width: 114%;
     }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 55px;
+      width: 340px;
+    }
   }
 }
 
@@ -35,6 +45,10 @@
     padding-left: 45px;
   }
 
+  @include  media-breakpoint-up(lg) {
+    padding-top: 90px;
+  }
+
   h2 {
     margin-bottom: 20px;
   }
@@ -42,6 +56,10 @@
   p {
     color: #4c4b4b;
     margin-bottom: 24px;
+
+    @include media-breakpoint-up(lg) {
+      text-align: justify;
+    }
   }
 
   &-cta {

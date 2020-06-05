@@ -17,6 +17,7 @@
 
   @include media-breakpoint-up(lg) {
     padding: 120px 0;
+    margin-bottom: 80px;
   }
 
   h1 {
@@ -27,7 +28,7 @@
 
     @include media-breakpoint-only(md) {
       margin-bottom: 29px;
-      padding-right: 3rem;
+      padding-right: 40px;
     }
 
     @include media-breakpoint-up(lg) {
