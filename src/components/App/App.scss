@@ -1,3 +1,6 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
 @import "../../variables";
 
 .btn-cta {
@@ -15,6 +18,11 @@ h1 {
   font-size: 30px;
   line-height: 34px;
   width: 100%;
+
+  @include media-breakpoint-only(md) {
+    font-size: 40px;
+    line-height: 44px;
+  }
 }
 
 h2 {
@@ -23,6 +31,7 @@ h2 {
 }
 
 p {
+  color: #4c4b4b;
   font-size: 1rem;
   line-height: 24px;
 }

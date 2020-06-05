@@ -1,3 +1,7 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
 .jumbotron-banner {
   background-image: url("./assets/banner-photo.jpg");
   background-size: cover;
@@ -7,22 +11,36 @@
   padding: 70px 0;
   margin-top: 39.9px;
 
+  @include media-breakpoint-only(md) {
+    padding-bottom: 65px;
+  }
+
   h1 {
-    font-size: 30px;
-    line-height: 34px;
     font-weight: 400;
     padding: 0 5px;
     text-transform: uppercase;
     margin-bottom: 19px;
+
+    @include media-breakpoint-only(md) {
+      margin-bottom: 29px;
+    }
   }
 
   p {
     color: #e1e1e1;
     line-height: 24px;
     margin-bottom: 23px;
+
+    @include media-breakpoint-only(md) {
+      margin-bottom: 33px;
+    }
   }
 
   a.btn {
     margin-bottom: 5px;
+
+    @include media-breakpoint-only(md) {
+      margin-bottom: 0;
+    }
   }
 }

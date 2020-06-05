@@ -1,4 +1,4 @@
-import React, { DOMElement, useRef } from "react";
+import React, { useRef } from "react";
 
 import "./Sidebar.scss";
 

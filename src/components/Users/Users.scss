@@ -1,0 +1,45 @@
+@import "../../variables";
+.users {
+  padding: 74px 0;
+  background: $secondary-bg;
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  &-list {
+    margin-top: 37px;
+
+    &-item {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+  }
+
+  button.btn-cta {
+    padding: 6px 62px;
+  }
+}
+
+.user-avatar {
+  border-radius: 25%;
+  margin-bottom: 12px;
+}
+
+.user-name {
+  margin-bottom: 10px;
+  padding: 0 50px;
+}
+
+.user-info {
+  padding: 0 65px;
+  &>p {
+    margin-bottom: 0;
+  }
+
+  .user-email {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

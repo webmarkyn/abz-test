@@ -9,10 +9,10 @@ const About = () => (
     <div className="container">
       <div className="row text-center">
         <h1>Let's get acquainted</h1>
-        <div className="col-12 about-image">
-          <AboutImage style={{ width: "290px" }} />
+        <div className="col-12 col-md-4 about-image">
+          <AboutImage />
         </div>
-        <div className="col-12 about-text">
+        <div className="col-12 col-md-8 about-text">
           <h2 className="text-center">I am cool frontend developer</h2>
           <p>
             We will evaluate how clean your approach to writing CSS and
