@@ -41,12 +41,9 @@ const App = () => {
   const setUsersData = async (page: number) => {
     try {
       const usersData = await getUsers(page, USERS_COUNT);
-      let end = false;
-      let data = usersData;
+      let end = usersData.page === usersData.total_pages;
+      let data = usersData.users;
       if (!data) data = [];
-      if (usersData.length < USERS_COUNT) {
-        end = true;
-      }
       setUsers((prev) => ({
         loading: false,
         error: false,
@@ -54,6 +51,7 @@ const App = () => {
         end,
       }));
     } catch (e) {
+      console.log(e);
       setUsers((prev) => ({
         loading: false,
         error: true,

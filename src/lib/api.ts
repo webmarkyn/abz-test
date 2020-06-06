@@ -1,15 +1,15 @@
-import { User } from "./types";
+import { UsersAPIResponse } from "./types";
 
 export const getUsers = async (
   page: number,
   count: number
-): Promise<User[]> => {
+): Promise<UsersAPIResponse> => {
   try {
     const res = await fetch(
       `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=${count}`
     );
     const data = await res.json();
-    return data.users;
+    return data;
   } catch (e) {
     throw new Error(`Something went wrong: ${e}`);
   }
