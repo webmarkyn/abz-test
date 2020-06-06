@@ -50,7 +50,6 @@ const RegistrationForm = ({
           },
         }
       );
-      console.log(res.status);
       if (res.status !== 201) {
         setUploadingState({ loading: false, error: true });
       } else {

@@ -51,7 +51,6 @@ const App = () => {
         end,
       }));
     } catch (e) {
-      console.log(e);
       setUsers((prev) => ({
         loading: false,
         error: true,
