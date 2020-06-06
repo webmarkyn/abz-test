@@ -4,6 +4,7 @@ import fileValidation from "../../utils/FileValidation";
 
 import "./RegistrationForm.scss";
 import { getToken } from "../../lib/api";
+import { UploadingStateData } from "../../lib/types";
 
 type Position = {
   id: number;
@@ -13,9 +14,14 @@ type Position = {
 type Props = {
   setModalActive: (val: boolean) => void;
   refreshUsers: () => void;
+  setUploadingState: (val: UploadingStateData) => void;
 };
 
-const RegistrationForm = ({ setModalActive, refreshUsers }: Props) => {
+const RegistrationForm = ({
+  setModalActive,
+  refreshUsers,
+  setUploadingState,
+}: Props) => {
   const { register, handleSubmit, errors } = useForm({
     mode: "onChange",
     reValidateMode: "onChange",
@@ -24,6 +30,7 @@ const RegistrationForm = ({ setModalActive, refreshUsers }: Props) => {
   const fileLabelRef = useRef<HTMLLabelElement | null>(null);
 
   const onSubmit = async (data: any) => {
+    setUploadingState({ loading: true, error: false });
     const token = await getToken();
     const formData = new FormData();
     formData.append("name", data.firstName);
@@ -43,14 +50,18 @@ const RegistrationForm = ({ setModalActive, refreshUsers }: Props) => {
           },
         }
       );
-      const parsed = await res.json();
-      console.log(parsed);
+      console.log(res.status);
+      if (res.status !== 201) {
+        setUploadingState({ loading: false, error: true });
+      } else {
+        setUploadingState({ loading: false, error: false });
+      }
     } catch (e) {
-      console.log(e);
+      setUploadingState({ loading: false, error: true });
+      throw new Error(e);
     }
     refreshUsers();
     setModalActive(true);
-    // console.log(await getToken());
   };
 
   const fetchPositions = () => {

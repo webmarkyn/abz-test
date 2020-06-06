@@ -19,7 +19,7 @@ const App = () => {
   const [modalActive, setModalActive] = useState<boolean>(false);
   const [uploadingState, setUploadingState] = useState<UploadingStateData>({
     error: false,
-    loading: true,
+    loading: false,
   });
   const [users, setUsers] = useState<UsersData>({
     loading: false,
@@ -88,6 +88,7 @@ const App = () => {
       <About />
       <Users users={users} incrementPage={incrementPage} />
       <RegistrationForm
+        setUploadingState={setUploadingState}
         setModalActive={setModalActive}
         refreshUsers={refreshUsers}
       />

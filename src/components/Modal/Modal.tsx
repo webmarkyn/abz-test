@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { UploadingStateData } from "../../lib/types";
 
 import "./Modal.scss";
@@ -14,6 +14,7 @@ const Modal = ({
   setModalActive,
   uploadingState: { loading, error },
 }: Props) => {
+  useEffect(() => {}, [loading, error]);
   const modalBody = () => {
     if (loading)
       return (
@@ -25,6 +26,8 @@ const Modal = ({
           />
         </div>
       );
+    if (error)
+      return <div className="modal-body text-danger">Error occurred</div>;
     return (
       <div className="modal-body">
         You have successfully passed the registration
