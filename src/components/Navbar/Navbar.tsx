@@ -14,6 +14,33 @@ const Navbar = ({ handleMenuActiveChange }: Props) => (
       <a href="#" className="navbar-brand">
         <ReactLogo />
       </a>
+      <ul className="navbar-nav ml-auto d-none d-lg-flex">
+        <li className="nav-item active">
+          <a href="#" className="nav-link">
+            About me
+          </a>
+        </li>
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            Relationships
+          </a>
+        </li>
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            Requirements
+          </a>
+        </li>
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            Users
+          </a>
+        </li>
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            Sign up
+          </a>
+        </li>
+      </ul>
       <button
         className="navbar-toggler collapsed"
         onClick={() => handleMenuActiveChange(true)}

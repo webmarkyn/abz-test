@@ -24,3 +24,26 @@
 .navbar-brand {
   padding-top: 0.2rem;
 }
+
+.navbar-nav {
+  .nav-item {
+
+    &.active {
+      .nav-link {
+        color: #007bff;
+      }
+    }
+    .nav-link {
+      font-size: 14px;
+      color: #212529;
+
+      @include  media-breakpoint-up(lg) {
+        padding: 0 0 0 29px;
+      }
+
+      &:hover {
+        color: #ef5b4c;
+      }
+    }
+  }
+}

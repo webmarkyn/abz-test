@@ -1,55 +1,55 @@
 import React from "react";
 
 import "./Users.scss";
+import { User, Users as UsersData } from "../../lib/types";
+
 import avatar from "./assets/avatar.png";
 
-const Users = () => (
-  <div className="users">
-    <div className="container text-center">
-      <h1>Our cheerful users</h1>
-      <p>Attention! Sorting users by registration date</p>
-      <div className="row users-list">
-        <div className="col-12 col-md-4 users-list-item">
-          <div className="user-avatar">
-            <img src={avatar} alt="user-avatar" />
-          </div>
-          <h2 className="user-name">Maximillian</h2>
-          <div className="user-info">
-            <p className="user-position">
-              Leading specialist of the Control Department
-            </p>
-            <p className="user-email">controldepartment@gmail</p>
-            <p className="user-phone">+380 50 678 03 24</p>
-          </div>
+type Props = {
+  users: UsersData;
+  incrementPage: () => void;
+};
+
+const Users = ({
+  users: { loading, data, error, end },
+  incrementPage,
+}: Props) => {
+  const userItems = (data: User[]) => {
+    return data.map((user) => (
+      <div className="col-12 col-md-4 users-list-item" key={user.id}>
+        <div className="user-avatar">
+          <img src={user.photo || avatar} alt="user-avatar" />
         </div>
-        <div className="col-12 col-md-4 users-list-item">
-          <div className="user-avatar">
-            <img src={avatar} alt="user-avatar" />
-          </div>
-          <h2 className="user-name">
-            Adolph Blaine Charles David Earl Matthew Matthew
-          </h2>
-          <div className="user-info">
-            <p className="user-position">Contextual advertising specialist</p>
-            <p className="user-email">adolph.blainecharles@gmail.com</p>
-            <p className="user-phone">+380 50 678 03 24</p>
-          </div>
-        </div>
-        <div className="col-12 col-md-4 users-list-item">
-          <div className="user-avatar">
-            <img src={avatar} alt="user-avatar" />
-          </div>
-          <h2 className="user-name">Elizabeth</h2>
-          <div className="user-info">
-            <p className="user-position">Frontend developer</p>
-            <p className="user-email">elisabet.front@gmail.com</p>
-            <p className="user-phone">+380 50 678 03 24</p>
-          </div>
+        <h2 className="user-name">{user.name}</h2>
+        <div className="user-info">
+          <p className="user-position">{user.position}</p>
+          <p className="user-email">
+            <span className="email-short">{user.email}</span>
+            <span className="tooltip-custom">{user.email}</span>
+          </p>
+          <p className="user-phone">{user.phone}</p>
         </div>
       </div>
-      <button className="btn btn-cta">Show more</button>
+    ));
+  };
+
+  const currentState = () => {
+    if (loading) return <h2 className="text-center">Loading...</h2>;
+    if (error) return <h2 className="text-center text-danger">Error</h2>;
+    return userItems(data);
+  };
+  return (
+    <div className="users">
+      <div className="container text-center">
+        <h1>Our cheerful users</h1>
+        <p>Attention! Sorting users by registration date</p>
+        <div className="row users-list">{currentState()}</div>
+        <button className="btn btn-cta" onClick={incrementPage} disabled={end}>
+          Show more
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Users;

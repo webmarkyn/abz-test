@@ -28,7 +28,7 @@ const About = () => (
             directory page P​SD mockup​ into HTML5/CSS3.
           </p>
           <div className="about-form-link text-center text-md-left">
-            <a href="#" className="about-text-cta d-block">
+            <a href="#registrationForm" className="about-text-cta d-block">
               Sign up now
             </a>
           </div>
