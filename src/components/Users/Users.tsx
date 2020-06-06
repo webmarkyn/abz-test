@@ -38,6 +38,7 @@ const Users = ({
     if (error) return <h2 className="text-center text-danger">Error</h2>;
     return userItems(data);
   };
+
   return (
     <div className="users">
       <div className="container text-center">

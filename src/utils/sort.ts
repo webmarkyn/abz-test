@@ -1,4 +1,4 @@
-import { User } from "./types";
+import { User } from "../lib/types";
 
 export const sortByRegistraion = (arr: User[]): User[] => {
   return arr.sort(

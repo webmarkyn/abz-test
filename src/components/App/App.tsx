@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./App.scss";
-import "../../variables.scss";
 import Navbar from "../Navbar";
 import Sidebar from "../Sidebar";
 import Jumbotron from "../Jumbotron";
@@ -8,10 +6,15 @@ import About from "../About";
 import Users from "../Users";
 import RegistrationForm from "../RegistrationForm";
 import Footer from "../Footer";
+import Modal from "../Modal";
+
+import { sortByRegistraion } from "../../utils/sort";
+
 import { UploadingStateData, Users as UsersData } from "../../lib/types";
 import { getUsers } from "../../lib/api";
-import { sortByRegistraion } from "../../lib/sort";
-import Modal from "../Modal";
+
+import "./App.scss";
+import "../../variables.scss";
 
 const USERS_COUNT = 6;
 const App = () => {
@@ -27,16 +30,15 @@ const App = () => {
     error: false,
     end: false,
   });
-
   const [page, setPage] = useState<number>(1);
-
-  const handleMenuActiveChange = (value: boolean) => {
-    setMenuActive(value);
-  };
 
   useEffect(() => {
     setUsersData(page);
   }, [page]);
+
+  const handleMenuActiveChange = (value: boolean) => {
+    setMenuActive(value);
+  };
 
   const setUsersData = async (page: number) => {
     try {

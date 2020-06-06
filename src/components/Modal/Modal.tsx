@@ -15,6 +15,7 @@ const Modal = ({
   uploadingState: { loading, error },
 }: Props) => {
   useEffect(() => {}, [loading, error]);
+
   const modalBody = () => {
     if (loading)
       return (
@@ -34,6 +35,7 @@ const Modal = ({
       </div>
     );
   };
+
   return (
     <div
       className={`modal fade ${modalActive ? "active" : ""}`}
