@@ -3,13 +3,19 @@ import { useForm } from "react-hook-form";
 import fileValidation from "../../utils/FileValidation";
 
 import "./RegistrationForm.scss";
+import { getToken } from "../../lib/api";
 
 type Position = {
   id: number;
   name: string;
 };
 
-const RegistrationForm = () => {
+type Props = {
+  setModalActive: (val: boolean) => void;
+  refreshUsers: () => void;
+};
+
+const RegistrationForm = ({ setModalActive, refreshUsers }: Props) => {
   const { register, handleSubmit, errors } = useForm({
     mode: "onChange",
     reValidateMode: "onChange",
@@ -17,8 +23,10 @@ const RegistrationForm = () => {
   const [positions, setPositions] = useState<Position[]>([]);
   const fileLabelRef = useRef<HTMLLabelElement | null>(null);
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    refreshUsers();
+    setModalActive(true);
+    // console.log(await getToken());
   };
 
   const fetchPositions = () => {
@@ -165,7 +173,12 @@ const RegistrationForm = () => {
                 </div>
               </div>
               <div className="form-submit text-center">
-                <button type="submit" className="btn btn-cta text-center">
+                <button
+                  type="submit"
+                  className="btn btn-cta text-center"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
                   Sign up now
                 </button>
               </div>
