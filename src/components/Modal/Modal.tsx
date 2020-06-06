@@ -1,13 +1,36 @@
 import React from "react";
+import { UploadingStateData } from "../../lib/types";
 
 import "./Modal.scss";
 
 type Props = {
   modalActive: boolean;
   setModalActive: (val: boolean) => void;
+  uploadingState: UploadingStateData;
 };
 
-const Modal = ({ modalActive, setModalActive }: Props) => {
+const Modal = ({
+  modalActive,
+  setModalActive,
+  uploadingState: { loading, error },
+}: Props) => {
+  const modalBody = () => {
+    if (loading)
+      return (
+        <div className="loading d-flex justify-content-center">
+          <div
+            className="spinner-border"
+            style={{ width: "3rem", height: "3rem" }}
+            role="status"
+          />
+        </div>
+      );
+    return (
+      <div className="modal-body">
+        You have successfully passed the registration
+      </div>
+    );
+  };
   return (
     <div
       className={`modal fade ${modalActive ? "active" : ""}`}
@@ -21,35 +44,26 @@ const Modal = ({ modalActive, setModalActive }: Props) => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLongTitle">
-              Congratulations
+              {loading ? "Please wait" : "Congratulations"}
             </h5>
             <button
               type="button"
               className="close"
               data-dismiss="modal"
               aria-label="Close"
+              disabled={loading}
               onClick={() => setModalActive(false)}
             >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="loading d-flex justify-content-center">
-            <div
-              className="spinner-border"
-              style={{ width: "3rem", height: "3rem" }}
-              role="status"
-            >
-              <span className="sr-only">Loading...</span>
-            </div>
-          </div>
-          <div className="modal-body">
-            You have successfully passed the registration
-          </div>
+          {modalBody()}
           <div className="modal-footer">
             <button
               type="button"
               className="btn btn-cta px-4"
               onClick={() => setModalActive(false)}
+              disabled={loading}
             >
               Great
             </button>

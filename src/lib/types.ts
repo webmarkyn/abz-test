@@ -15,3 +15,8 @@ export type Users = {
   error: boolean;
   end: boolean;
 };
+
+export type UploadingStateData = {
+  loading: boolean;
+  error: boolean;
+};

@@ -8,7 +8,7 @@ import About from "../About";
 import Users from "../Users";
 import RegistrationForm from "../RegistrationForm";
 import Footer from "../Footer";
-import { Users as UsersData } from "../../lib/types";
+import { UploadingStateData, Users as UsersData } from "../../lib/types";
 import { getUsers } from "../../lib/api";
 import { sortByRegistraion } from "../../lib/sort";
 import Modal from "../Modal";
@@ -17,9 +17,9 @@ const USERS_COUNT = 6;
 const App = () => {
   const [menuActive, setMenuActive] = useState<boolean>(false);
   const [modalActive, setModalActive] = useState<boolean>(false);
-  const [uploadingState, setUploadingState] = useState({
+  const [uploadingState, setUploadingState] = useState<UploadingStateData>({
     error: false,
-    loading: false,
+    loading: true,
   });
   const [users, setUsers] = useState<UsersData>({
     loading: false,
@@ -92,7 +92,11 @@ const App = () => {
         refreshUsers={refreshUsers}
       />
       <Footer />
-      <Modal modalActive={modalActive} setModalActive={setModalActive} />
+      <Modal
+        modalActive={modalActive}
+        setModalActive={setModalActive}
+        uploadingState={uploadingState}
+      />
     </div>
   );
 };

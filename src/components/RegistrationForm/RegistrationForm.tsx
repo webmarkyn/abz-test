@@ -24,6 +24,30 @@ const RegistrationForm = ({ setModalActive, refreshUsers }: Props) => {
   const fileLabelRef = useRef<HTMLLabelElement | null>(null);
 
   const onSubmit = async (data: any) => {
+    const token = await getToken();
+    const formData = new FormData();
+    formData.append("name", data.firstName);
+    formData.append("email", data.email);
+    formData.append("phone", data.phone);
+    formData.append("position_id", data.position);
+    formData.append("photo", data.filePhoto[0]);
+
+    try {
+      const res = await fetch(
+        "https://frontend-test-assignment-api.abz.agency/api/v1/users",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Token: token,
+          },
+        }
+      );
+      const parsed = await res.json();
+      console.log(parsed);
+    } catch (e) {
+      console.log(e);
+    }
     refreshUsers();
     setModalActive(true);
     // console.log(await getToken());
@@ -129,7 +153,7 @@ const RegistrationForm = ({ setModalActive, refreshUsers }: Props) => {
                           className={`custom-control-input ${
                             errors.position ? "is-invalid" : ""
                           }`}
-                          value={position.name}
+                          value={position.id}
                           id={position.name}
                           name="position"
                           ref={register({
