@@ -89,7 +89,10 @@
         color: #b2b9c0;
         font-size: 15px;
         height: 38px;
-
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-right: 20%;
         &.active {
           color: #212529;
         }
