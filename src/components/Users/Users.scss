@@ -29,6 +29,10 @@
       margin-top: 75px;
     }
 
+    @include media-breakpoint-up(lg) {
+      margin-top: 79px;
+    }
+
     &-item {
       text-align: center;
       margin-bottom: 35px;
